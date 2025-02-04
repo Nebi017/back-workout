@@ -8,6 +8,11 @@ app.use(cors());
 app.use(express.json());
 connectDatabase();
 
+app.get("/", (request, response) => {
+  console.log(request);
+  return response.status(234).send("welcome to Mern Stack");
+});
+
 app.use("/workouts", workOutRoute);
 app.use("/user", userRoute);
 app.listen(5555, () => {
